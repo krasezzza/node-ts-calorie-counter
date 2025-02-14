@@ -17,7 +17,7 @@ export const AppDataSource = new DataSource({
   username: DB_USERNAME || "postgres",
   password: DB_PASSWORD || "postgres",
   database: DB_DATABASE || "calorie_tracker",
-  synchronize: NODE_ENV === "development" ? true : false,
-  logging: NODE_ENV === "development" ? true : false,
+  synchronize: true,
+  logging: true,
   entities: [Patient, FoodItem, PatientFoodLog],
 });

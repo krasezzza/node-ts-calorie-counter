@@ -1,12 +1,14 @@
-import { DataSource, Repository } from "typeorm";
 import { Patient } from "../models/Patient";
+import { AppDataSource } from "../database";
+import { Repository } from "typeorm";
+import { IPatient } from "../interfaces";
 
 export class PatientsService {
   private _repository: Repository<Patient>;
 
-  constructor(appDataSource: DataSource) {
+  constructor() {
     // should be done with dependency injection
-    this._repository = appDataSource.getRepository(Patient);
+    this._repository = AppDataSource.getRepository(Patient);
   }
 
   async getAllPatients(): Promise<Patient[]> {
@@ -21,13 +23,8 @@ export class PatientsService {
     return patient;
   }
 
-  async createPatient(patient: Patient): Promise<Patient> {
+  async createPatient(patient: IPatient): Promise<Patient> {
     const newPatient = this._repository.create(patient);
     return this._repository.save(newPatient);
-  }
-
-  async updatePatient(id: number, patient: Partial<Patient>): Promise<Patient> {
-    await this._repository.update(id, patient);
-    return await this.getPatientById(id);
   }
 }

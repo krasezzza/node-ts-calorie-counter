@@ -1,12 +1,13 @@
-import { DataSource, Repository } from "typeorm";
 import { FoodItem } from "../models/FoodItem";
+import { AppDataSource } from "../database";
+import { Repository } from "typeorm";
 
 export class FoodItemsService {
   private _repository: Repository<FoodItem>;
 
-  constructor(appDataSource: DataSource) {
+  constructor() {
     // should be done with dependency injection
-    this._repository = appDataSource.getRepository(FoodItem);
+    this._repository = AppDataSource.getRepository(FoodItem);
   }
 
   async getAllFoodItems(): Promise<FoodItem[]> {
