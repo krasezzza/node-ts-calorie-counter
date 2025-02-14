@@ -1,0 +1,15 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "Docker Connection",
+      "database": "calorie_tracker",
+      "username": "postgres",
+      "password": "postgres"
+    }
+  ],
+  "postman.settings.dotenv-detection-notification-visibility": false
+}

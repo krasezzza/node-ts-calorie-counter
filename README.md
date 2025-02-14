@@ -3,7 +3,7 @@
 ```
 yarn install
 
-cp example.env .env
+cp example.env .env.development
 
 docker compose up -d
 
