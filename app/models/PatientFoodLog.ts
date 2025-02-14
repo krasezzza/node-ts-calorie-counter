@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, JoinColumn } from "typeorm";
 import { FoodItem } from "./FoodItem";
 import { Patient } from "./Patient";
 
@@ -8,9 +8,11 @@ export class PatientFoodLog {
   id!: number;
 
   @ManyToOne(() => Patient, (patient) => patient.foodLogs)
+  @JoinColumn({ name: 'patient_id' })
   patient!: Patient;
 
   @ManyToOne(() => FoodItem)
+  @JoinColumn({ name: 'food_item_id' })
   foodItem!: FoodItem;
 
   @Column("decimal")
