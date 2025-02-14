@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "3da1061c-f637-4216-9593-3034a221b31d",
+		"name": "nodets-calorie-tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39289606"
+	},
+	"item": [
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "GetAllPatients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/patients",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPatientById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/patients/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePatient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Victor\",\r\n    \"lastName\": \"Popchev\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/patients",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food Items",
+			"item": [
+				{
+					"name": "GetAllFoodItems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/food-items",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFoodItemById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/food-items/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food-items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFoodItem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"coca-cola\",\r\n    \"calories\": 150\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/food-items",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteFoodItem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/food-items/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food-items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient Logs",
+			"item": [
+				{
+					"name": "CreatePatientLog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": 2,\r\n    \"foodItemId\": 2,\r\n    \"gramsQuantity\": 300\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/patient-logs",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"patient-logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePatientLog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/patient-logs/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"patient-logs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
