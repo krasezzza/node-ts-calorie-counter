@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "rootDir": "./app",
+    "outDir": "./dist",
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}
