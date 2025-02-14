@@ -5,6 +5,7 @@ export class PatientFactory {
     const patient: IPatient = {
       firstName: requestBody.firstName,
       lastName: requestBody.lastName,
+      foodLogs: requestBody.foodLogs,
     };
 
     return patient;

@@ -2,7 +2,7 @@ export interface IPatient {
   id?: number;
   firstName: string;
   lastName: string;
-  foodLogs?: IPatientFoodLog[];
+  foodLogs: IPatientFoodLog[];
 }
 
 export interface IPatientFoodLog {

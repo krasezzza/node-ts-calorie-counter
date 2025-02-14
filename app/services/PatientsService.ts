@@ -12,7 +12,9 @@ export class PatientsService {
   }
 
   async getAllPatients(): Promise<Patient[]> {
-    return this._repository.find();
+    return this._repository.find({
+      relations: ["foodLogs"],
+    });
   }
 
   async getPatientById(id: number): Promise<Patient> {
@@ -24,7 +26,8 @@ export class PatientsService {
   }
 
   async createPatient(patient: IPatient): Promise<Patient> {
-    const newPatient = this._repository.create(patient);
+    const patientData = { ...patient, foodLogs: [] };
+    const newPatient = this._repository.create(patientData);
     return this._repository.save(newPatient);
   }
 }
