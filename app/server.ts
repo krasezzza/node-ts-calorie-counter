@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { AppDataSource } from './database';
 import { patientRoutes } from './routes/PatientRoutes';
+import { foodItemRoutes } from './routes/FoodItemRoutes';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/patients", patientRoutes);
+app.use("/food-items", foodItemRoutes);
 
 AppDataSource.initialize().then(() => {
   app.listen(PORT, () => {

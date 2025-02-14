@@ -17,5 +17,5 @@ export interface IFoodItem {
   id?: number;
   name: string;
   calories: number;
-  isDeleted: boolean;
+  isDeleted?: boolean;
 }

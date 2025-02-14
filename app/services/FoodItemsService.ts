@@ -1,6 +1,7 @@
 import { FoodItem } from "../models/FoodItem";
 import { AppDataSource } from "../database";
 import { Repository } from "typeorm";
+import { IFoodItem } from "../interfaces";
 
 export class FoodItemsService {
   private _repository: Repository<FoodItem>;
@@ -22,12 +23,13 @@ export class FoodItemsService {
     return foodItem;
   }
 
-  async createFoodItem(foodItem: FoodItem): Promise<FoodItem> {
+  async createFoodItem(foodItem: IFoodItem): Promise<FoodItem> {
     const newFoodItem = this._repository.create(foodItem);
     return this._repository.save(newFoodItem);
   }
 
-  async deleteFoodItem(id: number, foodItem: Partial<FoodItem>): Promise<FoodItem> {
+  async deleteFoodItem(id: number): Promise<FoodItem> {
+    const foodItem = await this.getFoodItemById(id);
     await this._repository.update(id, { ...foodItem, isDeleted: true });
     return await this.getFoodItemById(id);
   }
