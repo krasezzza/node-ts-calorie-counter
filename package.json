@@ -1,4 +1,5 @@
 {
+  "name": "nodets-calorie-tracker",
   "scripts": {
     "start": "nodemon --watch app app/server.ts"
   },
